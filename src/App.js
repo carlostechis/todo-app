@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from './TodoList'
-import uuidv4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos';
 
@@ -44,7 +44,7 @@ function App() {
       <input ref={todoNameRef} type='text' />
       <button onClick={handleAddTodo}>Add Todo</button>
       <button onClick={handleClearTodo}>Clear Completed</button>
-      <div>{todos.filter(todo => !todo.complete).length}0 left to do</div>
+      <div>{todos.filter(todo => !todo.complete).length} left to do</div>
     </>
   )
 }
